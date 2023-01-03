@@ -16,6 +16,8 @@
         <!-- icons -->
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 
+        <py-script> src="kademlia/script.py"</py-script>
+
     </head>
 
     <!-- body start -->
@@ -311,7 +313,7 @@
                                             </div>
     
                                             <div class="widget-detail-1 text-end">
-                                                <h2 class="fw-normal pt-2 mb-1"> 256 </h2>
+                                                <h2 class="fw-normal pt-2 mb-1"> 2 </h2>
                                             </div>
                                         </div>
                                     </div>
@@ -327,7 +329,7 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end">
                                                 <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Action</a>
+                                                <a href="javascript:void(0);" class="dropdown-item" id="actionProx()" >Action</a>
                                                 <!-- item-->
                                                 <a href="javascript:void(0);" class="dropdown-item">Another action</a>
                                                 <!-- item-->
@@ -342,7 +344,7 @@
                                         <div class="widget-box-2">
                                             <div class="widget-detail-2 text-end">
                                                 <span class="badge bg-success rounded-pill float-start mt-3">32% <i class="mdi mdi-trending-up"></i> </span>
-                                                <h2 class="fw-normal mb-1"> 84 sec </h2>
+                                                <h2 class="fw-normal mb-1" id="secOne"> 84 sec </h2>
                                                 <p class="text-muted mb-3">Last feched</p>
                                             </div>
                                             <div class="progress progress-bar-alt-success progress-sm">
@@ -366,7 +368,7 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end">
                                                 <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Action</a>
+                                                <a href="javascript:void(0);" class="dropdown-item" id="actionLux" >Action</a>
                                                 <!-- item-->
                                                 <a href="javascript:void(0);" class="dropdown-item">Another action</a>
                                                 <!-- item-->
@@ -386,7 +388,7 @@
                                                         data-thickness=".15"/>
                                             </div>
                                             <div class="widget-detail-1 text-end">
-                                                <h2 class="fw-normal pt-2 mb-1"> 45 Sec </h2>
+                                                <h2 class="fw-normal pt-2 mb-1" id="secTwo"> 45 Sec </h2>
                                                 <p class="text-muted mb-1">Last feched</p>
                                             </div>
                                         </div>
@@ -402,85 +404,6 @@
     
 
             </div>
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
-
-
-        </div>
-                <!-- Tab panes -->
-                <div class="tab-content pt-0">  
-
-                    <div class="tab-pane active" id="settings-tab" role="tabpanel">
-
-
-                            <!-- Width -->
-                            <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">Width</h6>
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="layout-size" value="fluid" id="fluid" checked />
-                                <label class="form-check-label" for="fluid-check">Fluid</label>
-                            </div>
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="layout-size" value="boxed" id="boxed" />
-                                <label class="form-check-label" for="boxed-check">Boxed</label>
-                            </div>
-
-                            <!-- Left Sidebar-->
-                            <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">Left Sidebar Color</h6>
-
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="leftbar-color" value="light" id="light" />
-                                <label class="form-check-label" for="light-check">Light</label>
-                            </div>
-
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="leftbar-color" value="dark" id="dark" checked/>
-                                <label class="form-check-label" for="dark-check">Dark</label>
-                            </div>
-
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="leftbar-color" value="brand" id="brand" />
-                                <label class="form-check-label" for="brand-check">Brand</label>
-                            </div>
-
-                            <div class="form-check form-switch mb-3">
-                                <input type="checkbox" class="form-check-input" name="leftbar-color" value="gradient" id="gradient" />
-                                <label class="form-check-label" for="gradient-check">Gradient</label>
-                            </div>
-
-                            <!-- size -->
-                            <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">Left Sidebar Size</h6>
-
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="leftbar-size" value="default"
-                                    id="default-size-check" checked />
-                                <label class="form-check-label" for="default-size-check">Default</label>
-                            </div>
-
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="leftbar-size" value="condensed"
-                                    id="condensed-check" />
-                                <label class="form-check-label" for="condensed-check">Condensed <small>(Extra Small size)</small></label>
-                            </div>
-
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="leftbar-size" value="compact"
-                                    id="compact-check" />
-                                <label class="form-check-label" for="compact-check">Compact <small>(Small size)</small></label>
-                            </div>
-
-                            <!-- User info -->
-                            <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">Sidebar User Info</h6>
-
-                            <div class="form-check form-switch mb-1">
-                                <input type="checkbox" class="form-check-input" name="sidebar-user" value="true" id="sidebaruser-check" />
-                                <label class="form-check-label" for="sidebaruser-check">Enable</label>
-                            </div>
-
-
-            
-        </div>
-        <!-- /Right-bar -->
 
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
@@ -493,6 +416,8 @@
         <script src="assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
         <script src="assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
         <script src="assets/libs/feather-icons/feather.min.js"></script>
+    
+
 
         <!-- knob plugin -->
         <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
@@ -506,6 +431,23 @@
 
         <!-- App js-->
         <script src="assets/js/app.min.js"></script>
+
+        <!--connection kademlia-->
+        <script src="assets/js/conkad.js"></script>
         
+        <script>
+            function loadXMLDoc() {
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  document.getElementById("secOne").innerHTML =
+                  this.responseText;
+                }
+              };
+              xhttp.open("GET", "get.py", true);
+              xhttp.send();
+            }
+            </script>
     </body>
 </html>
+
