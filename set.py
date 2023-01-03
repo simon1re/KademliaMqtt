@@ -14,13 +14,16 @@ handler.setFormatter(formatter)
 log = logging.getLogger('kademlia')
 log.addHandler(handler)
 log.setLevel(logging.DEBUG)
-
+key= "key"
+value="hello 4244"
 async def run():
     server = Server()
     await server.listen(8490,interface="127.0.0.1")
     bootstrap_node = (sys.argv[1], int(sys.argv[2]))
     await server.bootstrap([bootstrap_node])
     await server.set(sys.argv[3], sys.argv[4])
+    #await server.set(key, value)
+    
     server.stop()
 
 asyncio.run(run())
