@@ -1,10 +1,13 @@
-/*
-Template Name: Adminto - Responsive Bootstrap 5 Admin Dashboard
-Author: CoderThemes
-Website: https://coderthemes.com/
-Contact: support@coderthemes.com
-File: Layout
-*/
+
+
+let message = document.getElementById("secOne")
+let actionBtn = document.getElementById("action")
+
+
+actionBtn.addEventListener("click", function(){
+    message.innerHTML = "My name is"
+})
+
 
 class LeftSidebar {
 
