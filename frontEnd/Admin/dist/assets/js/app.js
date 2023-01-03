@@ -1,14 +1,4 @@
 
-
-let message = document.getElementById("secOne")
-let actionBtn = document.getElementById("action")
-
-
-actionBtn.addEventListener("click", function(){
-    message.innerHTML = "My name is"
-})
-
-
 class LeftSidebar {
 
     constructor() {
