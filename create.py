@@ -15,7 +15,7 @@ loop = asyncio.get_event_loop()
 loop.set_debug(True)
 
 server = Server()
-loop.run_until_complete(server.listen(8468))
+loop.run_until_complete(server.listen(8468,interface="127.0.0.1"))
 
 try:
     loop.run_forever()
