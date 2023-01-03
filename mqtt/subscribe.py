@@ -13,16 +13,10 @@ if client.connect("localhost",1883,60) !=0:
 
 client.subscribe("test")
 
-# try:
-#     client.loop_start()
-# except:
-#     print("Disconnect")
-# client.disconnect()
-client.loop_start()
-time.sleep(5)
-client.loop_stop()
-client.loop_start()
-time.sleep(5)
-if client.connect("localhost",1883,60) !=0:
-    print("Could not connect")
-    sys.exit(-1)
+try:
+    client.loop_start()
+except:
+    print("Disconnect")
+time.sleep(2)
+client.disconnect()
+
