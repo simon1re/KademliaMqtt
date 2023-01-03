@@ -16,6 +16,8 @@
         <!-- icons -->
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 
+        <py-script> src="kademlia/script.py"</py-script>
+
     </head>
 
     <!-- body start -->
@@ -327,7 +329,7 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end">
                                                 <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item" id="actionProx" >Action</a>
+                                                <a href="javascript:void(0);" class="dropdown-item" id="actionProx()" >Action</a>
                                                 <!-- item-->
                                                 <a href="javascript:void(0);" class="dropdown-item">Another action</a>
                                                 <!-- item-->
@@ -386,7 +388,7 @@
                                                         data-thickness=".15"/>
                                             </div>
                                             <div class="widget-detail-1 text-end">
-                                                <h2 class="fw-normal pt-2 mb-1"> 45 Sec </h2>
+                                                <h2 class="fw-normal pt-2 mb-1" id="secTwo"> 45 Sec </h2>
                                                 <p class="text-muted mb-1">Last feched</p>
                                             </div>
                                         </div>
@@ -432,7 +434,20 @@
 
         <!--connection kademlia-->
         <script src="assets/js/conkad.js"></script>
-
         
+        <script>
+            function loadXMLDoc() {
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  document.getElementById("secOne").innerHTML =
+                  this.responseText;
+                }
+              };
+              xhttp.open("GET", "get.py", true);
+              xhttp.send();
+            }
+            </script>
     </body>
 </html>
+
