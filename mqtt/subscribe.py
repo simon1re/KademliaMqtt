@@ -1,8 +1,6 @@
 import paho.mqtt.client as paho
 import sys
 import time
-<<<<<<< Updated upstream
-=======
 import logging
 import asyncio
 from kademlia.network import Server
@@ -41,7 +39,6 @@ topic,newDate=asyncio.run(run())
 
 parseLastDate=parse(lastDate)
 parseNewDate=parse(newDate)
->>>>>>> Stashed changes
 
 def onMessage(client,userdata,msg):
     print(msg.topic + ":" + msg.payload.decode())
