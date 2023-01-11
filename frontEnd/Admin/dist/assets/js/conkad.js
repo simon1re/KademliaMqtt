@@ -8,26 +8,32 @@ let messageTwo = document.getElementById("secTwo")
 // Button for starting the function to run the python file
 
 
-results = 1
+// We hade to create fictional function as the Ajax dont work for demonstation
+
+let prox = "114"
+let lux = "112"
+
+
+
 actionBtnProx.addEventListener("click", function(){
-    if (results >= 0) {
-        messageOne.innerHTML = "Results"
-    }
-    else {
-        messageOne.innerHTML = "Results not found"
-    }
-   
-})
-
-
-function loadXMLDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("secOne").innerHTML =
-      this.responseText;
-    }
-  };
-  xhttp.open("GET", "get.py", true);
-  xhttp.send();
-}
+  
+ // $.ajax({
+   // type: "POST",
+   // url: "kademlia/get.py",
+   // data: { param: text}
+ // }).done(function( o ) {
+    
+ //   return result
+   messageOne.innerHTML = prox
+  });
+actionBtnLux.addEventListener("click", function(){
+  
+    // $.ajax({
+      // type: "POST",
+      // url: "kademlia/get.py",
+      // data: { param: text}
+    // }).done(function( o ) {
+       
+    //   return result
+      messageTwo.innerHTML = lux
+     });
